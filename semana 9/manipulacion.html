@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasificación del Concurso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    ol {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <script src="arrays.js"></script>
+  <h1>Clasificación del Concurso</h1>
+
+  <h2>Clasificación Actual:</h2>
+  <ol id="clasificacion-lista"></ol>
+
+  <h2>Acciones:</h2>
+  <button onclick="mostrarClasificacion()">1. Mostrar Clasificación Inicial</button>
+  <button onclick="lauraSuperaAJavier()">2. Laura supera a Javier</button>
+  <button onclick="eliminarPatricia()">3. Descalificar a Patricia</button>
+  <button onclick="agregarRaulYSofia()">4. Agregar a Raúl y Sofía</button>
+  <button onclick="agregarCarmen()">5. Agregar a Carmen al inicio</button>
