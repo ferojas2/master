@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* Encabezado principal (h1) */
+header h1 {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Negrita en párrafo */
+p strong {
+    color: blue;
+}
+
+/* Cursiva en párrafo */
+p em {
+    color: blue;
+}
+
+/* Imagen musical */
+.imagen-musical {
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Estilo para h3 */
+h3 {
+    color: red;
+}
+
+/* Estilo para enlaces */
+a {
+    color: green;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
