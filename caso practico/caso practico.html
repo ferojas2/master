@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora Simple</title>
+  <!-- Enlace al archivo de estilos -->
+  <link rel="stylesheet" href="practico.css" />
+</head>
+<body>
+  <div class="calculadora">
+    <input type="text" id="display" class="calculadora__display" disabled />
+    <div class="calculadora__botones">
+      <!-- Números y operadores -->
+      <button class="boton" data-valor="7">7</button>
+      <button class="boton" data-valor="8">8</button>
+      <button class="boton" data-valor="9">9</button>
+      <button class="boton boton--operador" data-valor="/">/</button>
+
+      <button class="boton" data-valor="4">4</button>
+      <button class="boton" data-valor="5">5</button>
+      <button class="boton" data-valor="6">6</button>
+      <button class="boton boton--operador" data-valor="*">*</button>
+
+      <button class="boton" data-valor="1">1</button>
+      <button class="boton" data-valor="2">2</button>
+      <button class="boton" data-valor="3">3</button>
+      <button class="boton boton--operador" data-valor="-">-</button>
+
+      <button class="boton" data-valor="0">0</button>
+      <button class="boton" data-valor=".">.</button>
+      <button class="boton boton--igual" id="igual">=</button>
+      <button class="boton boton--operador" data-valor="+">+</button>
+
+      <button class="boton boton--retroceso" id="retroceso">⌫</button>
+      <button class="boton boton--limpiar" id="limpiar">C</button>
+    </div>
+  </div>
+
+  <!-- Enlace al archivo JavaScript -->
+  <script src="caso.js"></script>
+</body>
+</html>
