@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 - Vanilla JS + BEM + Flexbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* === Estilos base con metodología BEM === */
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .interface {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .interface__buttons {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .interface__button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .interface__button:hover {
+      background-color: #2980b9;
+    }
+
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .box-container__box {
+      width: 100px;
+      height: 100px;
+      background-color: #8e44ad;
+      border: 2px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    /* Modificadores BEM */
+    .box-container__box--alt-color {
+      background-color: #2ecc71;
+    }
+
+    .box-container__box--rounded {
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="interface">
+    <div class="interface__buttons">
+      <button class="interface__button" id="toggle-colors">Toggle Colors</button>
+      <button class="interface__button" id="toggle-rounded">Toggle Rounded Borders</button>
+      <button class="interface__button" id="add-box">Add a new box</button>
+    </div>
+
+    <div class="box-container" id="box-container">
+      <div class="box-container__box"></div>
+      <div class="box-container__box"></div>
+      <div class="box-container__box"></div>
+    </div>
+  </div>
+
+  <script>
+    // Obtener elementos
+    const btnToggleColors = document.getElementById('toggle-colors');
+    const btnToggleRounded = document.getElementById('toggle-rounded');
+    const btnAddBox = document.getElementById('add-box');
+    const container = document.getElementById('box-container');
+
+    // Alternar color
+    btnToggleColors.addEventListener('click', () => {
+      const boxes = document.querySelectorAll('.box-container__box');
+      boxes.forEach(box => box.classList.toggle('box-container__box--alt-color'));
+    });
+
+    // Alternar bordes redondeados
+    btnToggleRounded.addEventListener('click', () => {
+      const boxes = document.querySelectorAll('.box-container__box');
+      boxes.forEach(box => box.classList.toggle('box-container__box--rounded'));
+    });
+
+    // Agregar una nueva caja
+    btnAddBox.addEventListener('click', () => {
+      const newBox = document.createElement('div');
+      newBox.classList.add('box-container__box');
+
+      // Detectar si la primera caja tiene estilos modificadores activos
+      const firstBox = document.querySelector('.box-container__box');
+      if (firstBox.classList.contains('box-container__box--alt-color')) {
+        newBox.classList.add('box-container__box--alt-color');
+      }
+      if (firstBox.classList.contains('box-container__box--rounded')) {
+        newBox.classList.add('box-container__box--rounded');
+      }
+
+      container.appendChild(newBox);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo jQuery</title>
+  
+  <!-- Incluimos jQuery desde CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-color: lightblue;
+      border: 2px solid black;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .color-alt {
+      background-color: lightgreen;
+    }
+
+    .rounded {
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botones -->
+  <button id="toggle-colors">Toggle Colors</button>
+  <button id="toggle-rounded">Toggle Rounded Borders</button>
+  <button id="add-box">Add a new box</button>
+
+  <!-- Contenedor de las cajas -->
+  <div id="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  <!-- Código jQuery -->
+  <script>
+    $(document).ready(function () {
+      // Alternar colores
+      $('#toggle-colors').click(function () {
+        $('.box').toggleClass('color-alt');
+      });
+
+      // Alternar bordes redondeados
+      $('#toggle-rounded').click(function () {
+        $('.box').toggleClass('rounded');
+      });
+
+      // Agregar nueva caja
+      $('#add-box').click(function () {
+        // Verificar clases activas
+        const isRounded = $('.box').first().hasClass('rounded');
+        const isAltColor = $('.box').first().hasClass('color-alt');
+
+        // Crear nueva caja con clases activas
+        let newBox = $('<div class="box"></div>');
+        if (isRounded) newBox.addClass('rounded');
+        if (isAltColor) newBox.addClass('color-alt');
+
+        $('#container').append(newBox);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
